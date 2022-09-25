@@ -100,7 +100,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/studeer_blue"
+            android:backgroundTint="@color/teal_200"
             style="@style/Widget.Material3.Button.ElevatedButton"
             android:textColor="@color/white"
             android:textSize="15dp"

@@ -62,7 +62,7 @@ ActivityEditPembelian : AppCompatActivity() {
             db.pembelianDao().updatePembelian(
                 Pembelian(pembelianId,etTitle.text.toString(), etDate.text.toString(), etActivity.text.toString())
             )
-            sendNotificationSave()
+            sendNotificationEdit()
             finish()
         }
     }

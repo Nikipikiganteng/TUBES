@@ -57,15 +57,19 @@ class HomeActivity : AppCompatActivity() {
         startActivity(moveActivity)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val menuInflater = MenuInflater(this)
+        menuInflater.inflate(R.menu.exit, menu)
+        return true
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.menu_exit){
 
-            // Jika menu yang dipilih adalah menu Exit, maka tampilkan sebuah dialog
             val builder: AlertDialog.Builder = AlertDialog.Builder(this@HomeActivity)
-            builder.setMessage("Are you sure want to exit?")
-                .setPositiveButton("YES", object : DialogInterface.OnClickListener{
+            builder.setMessage("Yakin ingin keluar?")
+                .setPositiveButton("YA!", object : DialogInterface.OnClickListener{
                     override fun onClick(dialogInterface: DialogInterface, i: Int){
-                        // Keluar dari aplikasi
                         finishAndRemoveTask()
                     }
                 })

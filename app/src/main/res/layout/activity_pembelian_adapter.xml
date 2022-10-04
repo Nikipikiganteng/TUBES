@@ -27,7 +27,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:text="Paket"
-            android:textColor="@color/purple_200"
+            android:textColor="@color/studeer_blue"
             android:textSize="24dp"
             android:textStyle="bold" />
 

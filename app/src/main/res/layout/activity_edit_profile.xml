@@ -83,7 +83,7 @@
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="550dp"
-        android:backgroundTint="@color/purple_200"
+        android:backgroundTint="@color/studeer_blue"
         android:text="Save" />
 
 

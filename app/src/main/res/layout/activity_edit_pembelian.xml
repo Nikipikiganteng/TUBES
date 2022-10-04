@@ -60,7 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="560dp"
-        android:backgroundTint="@color/purple_200"
+        android:backgroundTint="@color/studeer_blue"
         android:text="Save" />
 
     <Button
@@ -70,6 +70,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="610dp"
-        android:backgroundTint="@color/purple_200"
+        android:backgroundTint="@color/studeer_blue"
         android:text="Update" />
 </FrameLayout>

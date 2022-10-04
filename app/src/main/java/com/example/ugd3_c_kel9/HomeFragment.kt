@@ -22,7 +22,7 @@ class HomeFragment : Fragment() {
         val layoutManager = LinearLayoutManager(context)
         val adapter : RVStudeerAdapter = RVStudeerAdapter(Studeer.listOfStudeer)
 
-        val rvStudeer : RecyclerView = view.findViewById(R.id.rv_sukucadang)
+        val rvStudeer : RecyclerView = view.findViewById(R.id.rv_studeer)
 
         rvStudeer.layoutManager = layoutManager
 

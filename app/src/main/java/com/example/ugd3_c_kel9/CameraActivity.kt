@@ -32,4 +32,5 @@ class CameraActivity : AppCompatActivity() {
         val imageClose = findViewById<View>(R.id.imgClose) as ImageButton
         imageClose.setOnClickListener{ view: View? -> System.exit(0)}
     }
+
 }

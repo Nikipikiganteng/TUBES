@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import com.example.ugd3_c_kel9.room.UserDB
 
@@ -39,6 +40,12 @@ class ProfileFragment : Fragment() {
             val intent = Intent(requireActivity(), ActivityEditProfile::class.java)
             startActivity(intent)
 //            (
+        }
+
+        val btnCam: ImageButton = view.findViewById(R.id.imageCam)
+        btnCam.setOnClickListener{
+            val moveCam = Intent(this@ProfileFragment.context, CameraActivity::class.java)
+            startActivity(moveCam)
         }
 
     }

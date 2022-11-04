@@ -18,6 +18,11 @@
         <entry key="..\:/Kuliah Semester 5/PBP/UGD3_C_Kel9/UGD3_C_Kel 9/UGD3_C_Kel 9/UGD3_C_Kel 9/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
         <entry key="..\:/Kuliah Semester 5/PBP/UGD3_C_Kel9/UGD3_C_Kel 9/UGD3_C_Kel 9/UGD3_C_Kel 9/app/src/main/res/menu/exit.xml" value="0.290234375" />
         <entry key="..\:/Kuliah Semester 5/PBP/UGD3_C_Kel9/UGD3_C_Kel 9/UGD3_C_Kel 9/UGD3_C_Kel 9/app/src/main/res/menu/home_profile_pembelian.xml" value="0.32587719298245615" />
+        <entry key="..\:/Kuliah Semester 5/TUBES PBP/TUBES/app/src/main/res/drawable/bg_circle.xml" value="0.3305" />
+        <entry key="..\:/Kuliah Semester 5/TUBES PBP/TUBES/app/src/main/res/drawable/bg_rounded_rect.xml" value="0.3305" />
+        <entry key="..\:/Kuliah Semester 5/TUBES PBP/TUBES/app/src/main/res/drawable/bg_triangle.xml" value="0.3305" />
+        <entry key="..\:/Kuliah Semester 5/TUBES PBP/TUBES/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.3305" />
+        <entry key="..\:/Kuliah Semester 5/TUBES PBP/TUBES/app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.3305" />
         <entry key="..\:/Kuliah Semester 5/TUBES PBP/TUBES/app/src/main/res/drawable/ic_baseline_notifications_24.xml" value="0.177" />
         <entry key="..\:/Kuliah Semester 5/TUBES PBP/TUBES/app/src/main/res/layout/activity_edit_pembelian.xml" value="0.31085043988269795" />
         <entry key="..\:/Kuliah Semester 5/TUBES PBP/TUBES/app/src/main/res/layout/activity_edit_profile.xml" value="0.31085043988269795" />
@@ -26,8 +31,11 @@
         <entry key="..\:/Kuliah Semester 5/TUBES PBP/TUBES/app/src/main/res/layout/activity_pembelian_adapter.xml" value="0.32587719298245615" />
         <entry key="..\:/Kuliah Semester 5/TUBES PBP/TUBES/app/src/main/res/layout/activity_register.xml" value="0.32587719298245615" />
         <entry key="..\:/Kuliah Semester 5/TUBES PBP/TUBES/app/src/main/res/layout/fragment_home.xml" value="0.30113636363636365" />
+        <entry key="..\:/Kuliah Semester 5/TUBES PBP/TUBES/app/src/main/res/layout/fragment_maps.xml" value="0.32587719298245615" />
         <entry key="..\:/Kuliah Semester 5/TUBES PBP/TUBES/app/src/main/res/layout/fragment_pembelian.xml" value="0.32587719298245615" />
         <entry key="..\:/Kuliah Semester 5/TUBES PBP/TUBES/app/src/main/res/layout/fragment_profile.xml" value="0.32587719298245615" />
+        <entry key="..\:/Kuliah Semester 5/TUBES PBP/TUBES/app/src/main/res/layout/layout_camera.xml" value="0.289453125" />
+        <entry key="..\:/Kuliah Semester 5/TUBES PBP/TUBES/app/src/main/res/layout/layout_tooltip.xml" value="0.325" />
         <entry key="..\:/Kuliah Semester 5/TUBES PBP/TUBES/app/src/main/res/layout/rv_item_studeer.xml" value="0.32587719298245615" />
         <entry key="..\:/Kuliah Semester 5/TUBES PBP/TUBES/app/src/main/res/menu/exit.xml" value="0.32587719298245615" />
         <entry key="..\:/Kuliah Semester 5/TUBES PBP/TUBES/app/src/main/res/menu/home_profile_pembelian.xml" value="0.32587719298245615" />

@@ -14,4 +14,8 @@
         android:id="@+id/itemProfile"
         android:icon="@drawable/ic_user_24"
         android:title="Profile" />
+    <item
+        android:id="@+id/itemDaftarPaket"
+        android:icon="@drawable/ic_baseline_list"
+        android:title="Daftar Paket" />
 </menu>

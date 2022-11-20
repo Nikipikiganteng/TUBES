@@ -10,6 +10,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import com.example.ugd3_c_kel9.fragment.DaftarPaketFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeActivity : AppCompatActivity() {
@@ -22,6 +23,7 @@ class HomeActivity : AppCompatActivity() {
         val fragmentHome = HomeFragment()
         val fragmentProfile = ProfileFragment()
         val fragmentPembelian = PembelianFragment()
+        val fragmentDaftarPaket = DaftarPaketFragment()
 
         setCurrentFragment(fragmentHome)
 
@@ -39,6 +41,10 @@ class HomeActivity : AppCompatActivity() {
                 }
                 R.id.itemProfile -> {
                     setCurrentFragment(fragmentProfile)
+                    true
+                }
+                R.id.itemDaftarPaket -> {
+                    setCurrentFragment(fragmentDaftarPaket)
                     true
                 }
                 else -> false

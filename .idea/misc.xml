@@ -3,6 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Avila/Kuliah/Materi Kuliah/Semester V/Pemrograman Berbasis Platform/Modul 11/TUBES/app/src/main/res/drawable/ic_baseline_date.xml" value="0.1" />
+        <entry key="..\:/Avila/Kuliah/Materi Kuliah/Semester V/Pemrograman Berbasis Platform/Modul 11/TUBES/app/src/main/res/drawable/ic_baseline_double_arrow.xml" value="0.1" />
+        <entry key="..\:/Avila/Kuliah/Materi Kuliah/Semester V/Pemrograman Berbasis Platform/Modul 11/TUBES/app/src/main/res/drawable/ic_baseline_edit.xml" value="0.1" />
+        <entry key="..\:/Avila/Kuliah/Materi Kuliah/Semester V/Pemrograman Berbasis Platform/Modul 11/TUBES/app/src/main/res/drawable/ic_baseline_search.xml" value="0.1" />
+        <entry key="..\:/Avila/Kuliah/Materi Kuliah/Semester V/Pemrograman Berbasis Platform/Modul 11/TUBES/app/src/main/res/drawable/ic_baseline_trash.xml" value="0.1" />
+        <entry key="..\:/Avila/Kuliah/Materi Kuliah/Semester V/Pemrograman Berbasis Platform/Modul 11/TUBES/app/src/main/res/drawable/ic_date_24.xml" value="0.1" />
+        <entry key="..\:/Avila/Kuliah/Materi Kuliah/Semester V/Pemrograman Berbasis Platform/Modul 11/TUBES/app/src/main/res/layout/activity_daftar_paket.xml" value="0.17552083333333332" />
+        <entry key="..\:/Avila/Kuliah/Materi Kuliah/Semester V/Pemrograman Berbasis Platform/Modul 11/TUBES/app/src/main/res/layout/activity_detail_daftar_paket.xml" value="0.17552083333333332" />
+        <entry key="..\:/Avila/Kuliah/Materi Kuliah/Semester V/Pemrograman Berbasis Platform/Modul 11/TUBES/app/src/main/res/layout/activity_form_add_daftar_paket.xml" value="0.17552083333333332" />
+        <entry key="..\:/Avila/Kuliah/Materi Kuliah/Semester V/Pemrograman Berbasis Platform/Modul 11/TUBES/app/src/main/res/layout/activity_form_edit_daftar_paket.xml" value="0.16145833333333334" />
+        <entry key="..\:/Avila/Kuliah/Materi Kuliah/Semester V/Pemrograman Berbasis Platform/Modul 11/TUBES/app/src/main/res/layout/activity_home.xml" value="0.17552083333333332" />
+        <entry key="..\:/Avila/Kuliah/Materi Kuliah/Semester V/Pemrograman Berbasis Platform/Modul 11/TUBES/app/src/main/res/layout/fragment_daftar_paket.xml" value="0.17552083333333332" />
+        <entry key="..\:/Avila/Kuliah/Materi Kuliah/Semester V/Pemrograman Berbasis Platform/Modul 11/TUBES/app/src/main/res/layout/fragment_data_pembelian.xml" value="0.1068840579710145" />
+        <entry key="..\:/Avila/Kuliah/Materi Kuliah/Semester V/Pemrograman Berbasis Platform/Modul 11/TUBES/app/src/main/res/layout/fragment_home.xml" value="0.17552083333333332" />
+        <entry key="..\:/Avila/Kuliah/Materi Kuliah/Semester V/Pemrograman Berbasis Platform/Modul 11/TUBES/app/src/main/res/layout/fragment_pembelian.xml" value="0.1068840579710145" />
+        <entry key="..\:/Avila/Kuliah/Materi Kuliah/Semester V/Pemrograman Berbasis Platform/Modul 11/TUBES/app/src/main/res/layout/fragment_profile.xml" value="0.17552083333333332" />
+        <entry key="..\:/Avila/Kuliah/Materi Kuliah/Semester V/Pemrograman Berbasis Platform/Modul 11/TUBES/app/src/main/res/layout/list_daftar_paket.xml" value="0.1068840579710145" />
+        <entry key="..\:/Avila/Kuliah/Materi Kuliah/Semester V/Pemrograman Berbasis Platform/Modul 11/TUBES/app/src/main/res/menu/home_profile_pembelian.xml" value="0.17552083333333332" />
         <entry key="..\:/Kuliah Semester 5/PBP/UGD3_C_Kel9/UGD3_C_Kel 9/UGD3_C_Kel 9/UGD3_C_Kel 9/app/src/main/res/drawable/ic_user_24.xml" value="0.2885" />
         <entry key="..\:/Kuliah Semester 5/PBP/UGD3_C_Kel9/UGD3_C_Kel 9/UGD3_C_Kel 9/UGD3_C_Kel 9/app/src/main/res/layout/activity_edit_pembelian.xml" value="0.32587719298245615" />
         <entry key="..\:/Kuliah Semester 5/PBP/UGD3_C_Kel9/UGD3_C_Kel 9/UGD3_C_Kel 9/UGD3_C_Kel 9/app/src/main/res/layout/activity_edit_profile.xml" value="0.33" />

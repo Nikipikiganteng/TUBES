@@ -34,9 +34,6 @@
             android:name=".CameraActivity"
             android:exported="false" />
         <activity
-            android:name=".ActivityCamera"
-            android:exported="false" />
-        <activity
             android:name=".ActivityEditPembelian"
             android:exported="false" />
         <activity

@@ -7,6 +7,7 @@ import android.view.KeyEvent
 import android.view.View
 import com.example.ugd3_c_kel9.databinding.ActivityDaftarPaketBinding
 import com.example.ugd3_c_kel9.fragment.DaftarPaketFragment
+import com.example.ugd3_c_kel9.fragment.DataDaftarPaketFragment
 
 class DaftarPaketActivity : AppCompatActivity() {
     private lateinit var binding : ActivityDaftarPaketBinding
@@ -32,7 +33,7 @@ class DaftarPaketActivity : AppCompatActivity() {
         val mFragmentManager = supportFragmentManager
         val mFragmentTransaction =
             mFragmentManager.beginTransaction()
-        val mFragment = DaftarPaketFragment()
+        val mFragment = DataDaftarPaketFragment()
         val textCari = binding.txtCari.text
         val mBundle = Bundle()
         mBundle.putString("cari", textCari.toString())

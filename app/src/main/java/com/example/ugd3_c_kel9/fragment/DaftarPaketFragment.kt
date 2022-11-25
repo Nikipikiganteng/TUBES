@@ -27,6 +27,10 @@ class DaftarPaketFragment : Fragment() {
             val intent = Intent(requireActivity(), DaftarPaketActivity::class.java)
             startActivity(intent)
         }
+        binding.buttonPdf.setOnClickListener {
+            val intent = Intent(requireActivity(), pdfActivity::class.java)
+            startActivity(intent)
+        }
         return binding.root
     }
 }

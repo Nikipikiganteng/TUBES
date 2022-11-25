@@ -31,6 +31,10 @@ class DaftarPaketFragment : Fragment() {
             val intent = Intent(requireActivity(), pdfActivity::class.java)
             startActivity(intent)
         }
+        binding.buttonQr.setOnClickListener {
+            val intent = Intent(requireActivity(), QRCodeActivity::class.java)
+            startActivity(intent)
+        }
         return binding.root
     }
 }

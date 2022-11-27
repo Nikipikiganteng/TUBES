@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.ugd3_c_kel9.databinding.ActivityFormEditDaftarPaketBinding
+import com.shashank.sony.fancytoastlib.FancyToast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -50,8 +51,9 @@ class FormEditDaftarPaketActivity : AppCompatActivity() {
                         response: Response<ResponseCreate>
                     ) {
                         if(response.isSuccessful) {
-                            Toast.makeText(applicationContext,"${response.body()?.pesan}",
-                                Toast.LENGTH_LONG).show()
+                            FancyToast.makeText(applicationContext,"Berhasil mengedit data",
+                                FancyToast.LENGTH_LONG,
+                                FancyToast.SUCCESS,true).show()
                             finish()
                         }
                     }

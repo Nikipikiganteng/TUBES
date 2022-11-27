@@ -25,6 +25,7 @@ import com.itextpdf.layout.element.Paragraph
 import com.itextpdf.layout.element.Table
 import com.itextpdf.layout.property.HorizontalAlignment
 import com.itextpdf.layout.property.TextAlignment
+import com.shashank.sony.fancytoastlib.FancyToast
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
@@ -135,6 +136,8 @@ class pdfActivity : AppCompatActivity() {
         document.add(qrCodeImage)
 
         document.close()
-        Toast.makeText(this, "Pdf Created", Toast.LENGTH_LONG).show()
+        FancyToast.makeText(applicationContext,"Pdf created",
+            FancyToast.LENGTH_LONG,
+            FancyToast.SUCCESS,true).show()
     }
 }

@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.ugd3_c_kel9.databinding.ActivityFormAddDaftarPaketBinding
 import com.example.ugd3_c_kel9.databinding.ActivityFormEditDaftarPaketBinding
+import com.shashank.sony.fancytoastlib.FancyToast
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
@@ -47,14 +48,15 @@ class FormAddDaftarPaketActivity : AppCompatActivity() {
                     response: Response<ResponseCreate>
                 ) {
                     if(response.isSuccessful){
-                        Toast.makeText(applicationContext,"${response.body()?.pesan}",
-                            Toast.LENGTH_LONG).show()
+                        FancyToast.makeText(applicationContext,"Berhasil menambah data",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show()
                         finish()
                     }else {
                         val jsonObj = JSONObject(response.errorBody()!!.charStream().readText())
 
                         txtIdbl.setError(jsonObj.getString("message"))
-                        Toast.makeText(applicationContext,"Maaf sudah ada datanya", Toast.LENGTH_LONG).show()
+                        FancyToast.makeText(applicationContext,"Maaf, data sudah ada!",
+                            FancyToast.LENGTH_LONG,
+                            FancyToast.ERROR,true).show()
                     }
                 }
                 override fun onFailure(call:

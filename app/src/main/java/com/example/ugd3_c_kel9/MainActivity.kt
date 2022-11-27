@@ -14,6 +14,7 @@ import com.example.ugd3_c_kel9.room.User
 import com.example.ugd3_c_kel9.room.UserDB
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
+import com.shashank.sony.fancytoastlib.FancyToast
 
 class MainActivity : AppCompatActivity() {
     val db by lazy{ UserDB(this) }
@@ -72,6 +73,9 @@ class MainActivity : AppCompatActivity() {
                 editor?.putString("id", userDB.id.toString())
                 editor?.commit()
                 val moveMenu = Intent(this, HomeActivity::class.java)
+                FancyToast.makeText(this,"Berhasil Login",
+                    FancyToast.LENGTH_LONG,
+                    FancyToast.SUCCESS,true).show()
                 startActivity(moveMenu)
             } else {
                 Snackbar.make(

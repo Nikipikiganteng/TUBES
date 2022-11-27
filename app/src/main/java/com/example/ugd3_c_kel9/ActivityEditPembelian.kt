@@ -9,6 +9,7 @@ import androidx.core.app.NotificationManagerCompat
 import com.example.ugd3_c_kel9.room.Constant
 import com.example.ugd3_c_kel9.room.UserDB
 import com.example.ugd3_c_kel9.room.Pembelian
+import com.shashank.sony.fancytoastlib.FancyToast
 import kotlinx.android.synthetic.main.activity_edit_pembelian.*
 import kotlinx.android.synthetic.main.fragment_pembelian.*
 import kotlinx.coroutines.CoroutineScope
@@ -56,6 +57,9 @@ ActivityEditPembelian : AppCompatActivity() {
                 Pembelian(0,etTitle.text.toString(), etDate.text.toString(), etActivity.text.toString())
             )
             sendNotificationSave()
+            FancyToast.makeText(this,"Paket berhasil ditambah",
+                FancyToast.LENGTH_LONG,
+                FancyToast.SUCCESS,true).show()
             finish()
         }
         btnUpdate.setOnClickListener {
@@ -63,6 +67,7 @@ ActivityEditPembelian : AppCompatActivity() {
                 Pembelian(pembelianId,etTitle.text.toString(), etDate.text.toString(), etActivity.text.toString())
             )
             sendNotificationEdit()
+            FancyToast.makeText(this,"Paket berhasil diupdate",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show()
             finish()
         }
     }

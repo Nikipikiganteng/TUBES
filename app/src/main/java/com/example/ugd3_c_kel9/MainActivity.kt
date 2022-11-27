@@ -14,7 +14,12 @@ import com.example.ugd3_c_kel9.room.User
 import com.example.ugd3_c_kel9.room.UserDB
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
+import com.orhanobut.logger.AndroidLogAdapter
+import com.orhanobut.logger.FormatStrategy
+import com.orhanobut.logger.Logger
+import com.orhanobut.logger.PrettyFormatStrategy
 import com.shashank.sony.fancytoastlib.FancyToast
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
     val db by lazy{ UserDB(this) }
@@ -39,6 +44,21 @@ class MainActivity : AppCompatActivity() {
 
         val btnClear: Button
         val btnLogin: Button
+
+        val formatStrategy: FormatStrategy = PrettyFormatStrategy.newBuilder()
+            .showThreadInfo(true)
+            .methodCount(1)
+            .methodOffset(5)
+            .build()
+        Logger.addLogAdapter(AndroidLogAdapter(formatStrategy))
+
+        Timber.plant(object : Timber.DebugTree(){
+            override fun log(priority: Int, tag: String?, message: String, t: Throwable?){
+                Logger.log(priority,"-$tag", message, t)
+            }
+        })
+
+        Timber.d("Login Data Berhasil")
 
         btnClear = findViewById(R.id.btnClear)
         btnLogin = findViewById(R.id.btnLogin)

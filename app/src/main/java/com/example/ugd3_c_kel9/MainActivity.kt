@@ -12,20 +12,21 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.ugd3_c_kel9.room.User
 import com.example.ugd3_c_kel9.room.UserDB
+import com.example.ugd3_c_kel9.users.RClientUser
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
-import com.orhanobut.logger.AndroidLogAdapter
-import com.orhanobut.logger.FormatStrategy
-import com.orhanobut.logger.Logger
-import com.orhanobut.logger.PrettyFormatStrategy
 import com.shashank.sony.fancytoastlib.FancyToast
-import timber.log.Timber
+import org.json.JSONObject
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
     val db by lazy{ UserDB(this) }
     private lateinit var inputUsername: TextInputLayout
     private lateinit var inputPassword: TextInputLayout
     private lateinit var mainLayout: ConstraintLayout
+
 
     private val id = "id"
     private var access = false
@@ -35,8 +36,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val extras = Bundle()
 
-        setupHyperlink()
+//        setupHyperlink()
 
         inputUsername = findViewById(R.id.inputLayoutUsername)
         inputPassword = findViewById(R.id.inputLayoutPassword)
@@ -44,21 +46,6 @@ class MainActivity : AppCompatActivity() {
 
         val btnClear: Button
         val btnLogin: Button
-
-        val formatStrategy: FormatStrategy = PrettyFormatStrategy.newBuilder()
-            .showThreadInfo(true)
-            .methodCount(1)
-            .methodOffset(5)
-            .build()
-        Logger.addLogAdapter(AndroidLogAdapter(formatStrategy))
-
-        Timber.plant(object : Timber.DebugTree(){
-            override fun log(priority: Int, tag: String?, message: String, t: Throwable?){
-                Logger.log(priority,"-$tag", message, t)
-            }
-        })
-
-        Timber.d("Login Data Berhasil")
 
         btnClear = findViewById(R.id.btnClear)
         btnLogin = findViewById(R.id.btnLogin)
@@ -75,46 +62,55 @@ class MainActivity : AppCompatActivity() {
             val username: String = inputUsername.editText?.getText().toString()
             val password: String = inputPassword.editText?.getText().toString()
 
-            if(username.isEmpty()){
-                inputUsername.setError("Username must be filled with text")
-            }
+            RClientUser.instances.checkLogin(username, password).enqueue(object :
+                Callback<ResponseCreate> {
+                override fun onResponse(
+                    call: Call<ResponseCreate>,
+                    response: Response<ResponseCreate>
+                ) {
+                    if (response.isSuccessful) {
+                        extras.putString("username", username)
+                        extras.putString("password", password)
+                        val intent = Intent(this@MainActivity, HomeActivity::class.java)
+                        intent.putExtras(extras)
+                        startActivity(intent)
+                        FancyToast.makeText(
+                            applicationContext, "${response.body()?.pesan}",
+                            FancyToast.LENGTH_LONG,
+                            FancyToast.SUCCESS, true
+                        ).show()
+                        finish()
+                    } else {
+                        val jsonObj = JSONObject(response.errorBody()!!.charStream().readText())
 
-            if(password.isEmpty()){
-                inputPassword.setError("Password must be filled with text")
-            }
+//                        txtUsername.setError(jsonObj.getString("message"))
+                        inputUsername.setError("Username salah!")
+                        inputPassword.setError("Password salah!")
+                        FancyToast.makeText(
+                            applicationContext, jsonObj.getString("message"),
+                            FancyToast.LENGTH_LONG,
+                            FancyToast.ERROR, true
+                        ).show()
+                        //FancyToast.makeText(applicationContext,"Maaf sudah ada datanya",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show()
+                    }
+                }
+                override fun onFailure(
+                    call:
+                    Call<ResponseCreate>, t: Throwable
+                ) {
+                }
 
-            inputUsername = findViewById(R.id.inputLayoutUsername)
-            inputPassword = findViewById(R.id.inputLayoutPassword)
-            val userDB: User? = db.UserDao().getLogin(inputUsername.editText?.getText().toString(), inputPassword.editText?.getText().toString())
-
-            if (userDB != null) {
-                sharedPreferences = this.getSharedPreferences("login", Context.MODE_PRIVATE)
-                var editor = sharedPreferences?.edit()
-                editor?.putString("id", userDB.id.toString())
-                editor?.commit()
-                val moveMenu = Intent(this, HomeActivity::class.java)
-                FancyToast.makeText(this,"Berhasil Login",
-                    FancyToast.LENGTH_LONG,
-                    FancyToast.SUCCESS,true).show()
-                startActivity(moveMenu)
-            } else {
-                Snackbar.make(
-                    mainLayout,
-                    "Username or Password incorrect",
-                    Snackbar.LENGTH_LONG
-                ).show()
-                return@OnClickListener
-            }
+            })
         })
-    }
 
-    fun setupHyperlink(){
-        val linkTextView = findViewById<TextView>(R.id.textViewRegister)
-        linkTextView.setMovementMethod(LinkMovementMethod.getInstance())
-
-        linkTextView.setOnClickListener(View.OnClickListener {
-            val movetoActivityRegister = Intent(this, RegisterActivity::class.java)
-            startActivity(movetoActivityRegister)
-        })
+//    fun setupHyperlink(){
+//        val linkTextView = findViewById<TextView>(R.id.textViewRegister)
+//        linkTextView.setMovementMethod(LinkMovementMethod.getInstance())
+//
+//        linkTextView.setOnClickListener(View.OnClickListener {
+//            val movetoActivityRegister = Intent(this, RegisterActivity::class.java)
+//            startActivity(movetoActivityRegister)
+//        })
+//    }
     }
 }

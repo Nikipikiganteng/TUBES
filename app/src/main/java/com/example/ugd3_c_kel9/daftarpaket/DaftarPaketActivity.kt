@@ -1,12 +1,12 @@
-package com.example.ugd3_c_kel9
+package com.example.ugd3_c_kel9.daftarpaket
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
+import com.example.ugd3_c_kel9.R
 import com.example.ugd3_c_kel9.databinding.ActivityDaftarPaketBinding
-import com.example.ugd3_c_kel9.fragment.DaftarPaketFragment
 import com.example.ugd3_c_kel9.fragment.DataDaftarPaketFragment
 
 class DaftarPaketActivity : AppCompatActivity() {

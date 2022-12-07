@@ -50,16 +50,16 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".DaftarPaketActivity"
+            android:name=".daftarpaket.DaftarPaketActivity"
             android:exported="false" />
         <activity
-            android:name=".FormEditDaftarPaketActivity"
+            android:name=".daftarpaket.FormEditDaftarPaketActivity"
             android:exported="false" />
         <activity
-            android:name=".FormAddDaftarPaketActivity"
+            android:name=".daftarpaket.FormAddDaftarPaketActivity"
             android:exported="false" />
         <activity
-            android:name=".DetailDaftarPaketActivity"
+            android:name=".daftarpaket.DetailDaftarPaketActivity"
             android:exported="false" />
         <activity
             android:name=".CameraActivity"

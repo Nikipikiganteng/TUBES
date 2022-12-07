@@ -8,6 +8,10 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ugd3_c_kel9.*
+import com.example.ugd3_c_kel9.daftarpaket.DaftarPaket
+import com.example.ugd3_c_kel9.daftarpaket.DaftarPaketAdapter
+import com.example.ugd3_c_kel9.daftarpaket.RClient
+import com.example.ugd3_c_kel9.daftarpaket.ResponseDaftarPaket
 import com.example.ugd3_c_kel9.databinding.FragmentDataDaftarPaketBinding
 import retrofit2.Call
 import retrofit2.Callback

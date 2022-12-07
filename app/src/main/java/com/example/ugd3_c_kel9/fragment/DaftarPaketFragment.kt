@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.ugd3_c_kel9.*
+import com.example.ugd3_c_kel9.daftarpaket.DaftarPaket
+import com.example.ugd3_c_kel9.daftarpaket.DaftarPaketActivity
 import com.example.ugd3_c_kel9.databinding.FragmentDaftarPaketBinding
 
 class DaftarPaketFragment : Fragment() {

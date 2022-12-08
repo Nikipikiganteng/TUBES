@@ -62,6 +62,12 @@
             android:name=".daftarpaket.DetailDaftarPaketActivity"
             android:exported="false" />
         <activity
+            android:name=".users.FormEditUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".users.FormAddUserActivity"
+            android:exported="true" />
+        <activity
             android:name=".CameraActivity"
             android:exported="false" />
         <activity
@@ -72,7 +78,11 @@
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
-            android:exported="false" />
+            android:exported="true" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value=""/>
+        </activity>
         <activity
             android:name=".HomeActivity"
             android:exported="false" />

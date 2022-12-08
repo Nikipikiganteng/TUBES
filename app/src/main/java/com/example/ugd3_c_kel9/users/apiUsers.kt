@@ -11,7 +11,6 @@ interface apiUsers {
     @FormUrlEncoded
     @POST("users")
     fun createData(
-        @Field("id") idb:String?,
         @Field("nama") nama:String?,
         @Field("username") username:String?,
         @Field("password") password:String?,

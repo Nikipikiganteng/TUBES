@@ -35,6 +35,25 @@ class MainActivityTest {
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
         Thread.sleep(500)
 
+        val materialButton = onView(
+            allOf(
+                withId(R.id.btnLogin), withText("LOGIN"),
+                childAtPosition(
+                    allOf(
+                        withId(R.id.linearLayout),
+                        childAtPosition(
+                            withId(R.id.mainLayout),
+                            3
+                        )
+                    ),
+                    1
+                ),
+                isDisplayed()
+            )
+        )
+        materialButton.perform(click())
+        onView(isRoot()).perform(waitFor(3000))
+
         val textInputEditText = onView(
             allOf(
                 withId(R.id.etUsername),
@@ -63,41 +82,7 @@ class MainActivityTest {
                 isDisplayed()
             )
         )
-        textInputEditText2.perform(replaceText("avila"), closeSoftKeyboard())
-
-        val materialButton = onView(
-            allOf(
-                withId(R.id.btnLogin), withText("LOGIN"),
-                childAtPosition(
-                    allOf(
-                        withId(R.id.linearLayout),
-                        childAtPosition(
-                            withId(R.id.mainLayout),
-                            3
-                        )
-                    ),
-                    1
-                ),
-                isDisplayed()
-            )
-        )
-        materialButton.perform(click())
-        onView(isRoot()).perform(waitFor(3000))
-
-        val textInputEditText3 = onView(
-            allOf(
-                withId(R.id.etPassword),
-                childAtPosition(
-                    childAtPosition(
-                        withId(R.id.inputLayoutPassword),
-                        0
-                    ),
-                    0
-                ),
-                isDisplayed()
-            )
-        )
-        textInputEditText3.perform(replaceText("avila123"), closeSoftKeyboard())
+        textInputEditText2.perform(replaceText("tes"), closeSoftKeyboard())
 
         val materialButton2 = onView(
             allOf(
@@ -116,6 +101,40 @@ class MainActivityTest {
             )
         )
         materialButton2.perform(click())
+        onView(isRoot()).perform(waitFor(3000))
+
+        val textInputEditText3 = onView(
+            allOf(
+                withId(R.id.etPassword),
+                childAtPosition(
+                    childAtPosition(
+                        withId(R.id.inputLayoutPassword),
+                        0
+                    ),
+                    0
+                ),
+                isDisplayed()
+            )
+        )
+        textInputEditText3.perform(replaceText("tes"), closeSoftKeyboard())
+
+        val materialButton3 = onView(
+            allOf(
+                withId(R.id.btnLogin), withText("LOGIN"),
+                childAtPosition(
+                    allOf(
+                        withId(R.id.linearLayout),
+                        childAtPosition(
+                            withId(R.id.mainLayout),
+                            3
+                        )
+                    ),
+                    1
+                ),
+                isDisplayed()
+            )
+        )
+        materialButton3.perform(click())
         onView(isRoot()).perform(waitFor(3000))
     }
 

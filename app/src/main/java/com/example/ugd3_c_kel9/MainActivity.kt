@@ -12,6 +12,7 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.ugd3_c_kel9.room.User
 import com.example.ugd3_c_kel9.room.UserDB
+import com.example.ugd3_c_kel9.users.FormAddUserActivity
 import com.example.ugd3_c_kel9.users.RClientUser
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val extras = Bundle()
 
-//        setupHyperlink()
+        setupHyperlink()
 
         inputUsername = findViewById(R.id.inputLayoutUsername)
         inputPassword = findViewById(R.id.inputLayoutPassword)
@@ -102,15 +103,15 @@ class MainActivity : AppCompatActivity() {
 
             })
         })
+    }
 
-//    fun setupHyperlink(){
-//        val linkTextView = findViewById<TextView>(R.id.textViewRegister)
-//        linkTextView.setMovementMethod(LinkMovementMethod.getInstance())
-//
-//        linkTextView.setOnClickListener(View.OnClickListener {
-//            val movetoActivityRegister = Intent(this, RegisterActivity::class.java)
-//            startActivity(movetoActivityRegister)
-//        })
-//    }
+    fun setupHyperlink(){
+        val linkTextView = findViewById<TextView>(R.id.textViewRegister)
+        linkTextView.setMovementMethod(LinkMovementMethod.getInstance())
+
+        linkTextView.setOnClickListener(View.OnClickListener {
+            val movetoActivityRegister = Intent(this, FormAddUserActivity::class.java)
+            startActivity(movetoActivityRegister)
+        })
     }
 }

@@ -15,10 +15,12 @@ import java.util.*
 
 class FormAddDaftarPaketActivity : AppCompatActivity() {
     private lateinit var binding : ActivityFormAddDaftarPaketBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFormAddDaftarPaketBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         binding.btnAdd.setOnClickListener {
             saveData()
         }
@@ -31,6 +33,7 @@ class FormAddDaftarPaketActivity : AppCompatActivity() {
             dateDialog(this,datePicker).show()
         }
     }
+
     fun saveData(){
         with(binding) {
             val idbl = txtIdbl.text.toString()
@@ -46,13 +49,13 @@ class FormAddDaftarPaketActivity : AppCompatActivity() {
                     response: Response<ResponseCreate>
                 ) {
                     if(response.isSuccessful){
-                        FancyToast.makeText(applicationContext,"Berhasil menambah data",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show()
+                        FancyToast.makeText(applicationContext,"Berhasil register",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show()
                         finish()
                     }else {
                         val jsonObj = JSONObject(response.errorBody()!!.charStream().readText())
 
                         txtIdbl.setError(jsonObj.getString("message"))
-                        FancyToast.makeText(applicationContext,"Maaf, data sudah ada!",
+                        FancyToast.makeText(applicationContext,"Maaf, akun sudah ada!",
                             FancyToast.LENGTH_LONG,
                             FancyToast.ERROR,true).show()
                     }
@@ -62,10 +65,12 @@ class FormAddDaftarPaketActivity : AppCompatActivity() {
             })
         }
     }
+
     private fun dateToString(year: Int, month: Int, dayofMonth:
     Int): String {
         return year.toString()+"-"+(month+1)+"-"+dayofMonth.toString()
     }
+
     private fun dateDialog(context: Context, datePicker:
     DatePickerDialog.OnDateSetListener): DatePickerDialog {
         val calender = Calendar.getInstance()

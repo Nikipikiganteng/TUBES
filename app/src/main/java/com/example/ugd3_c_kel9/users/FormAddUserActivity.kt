@@ -34,7 +34,6 @@ class FormAddUserActivity  : AppCompatActivity() {
     }
     fun saveData(){
         with(binding) {
-            val id = txtId.text.toString()
             val nama= txtNama.text.toString()
             val username = txtUsername.text.toString()
             val password = txtPassword.text.toString()
@@ -42,20 +41,20 @@ class FormAddUserActivity  : AppCompatActivity() {
             val no_telpon = txtNotelpon.text.toString()
             val email = txtEmail.text.toString()
 
-            RClientUser.instances.createData(id,nama,username,password,tgl_lahir,no_telpon,email).enqueue(object :
+            RClientUser.instances.createData(nama,username,password,tgl_lahir,no_telpon,email).enqueue(object :
                 Callback<ResponseCreate> {
                 override fun onResponse(
                     call: Call<ResponseCreate>,
                     response: Response<ResponseCreate>
                 ) {
                     if(response.isSuccessful){
-                        FancyToast.makeText(applicationContext,"Berhasil menambah data",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show()
+                        FancyToast.makeText(applicationContext,"${response.body()?.pesan}",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show()
                         finish()
-                    }else {
+                    }else{
                         val jsonObj = JSONObject(response.errorBody()!!.charStream().readText())
-
-                        txtId.setError(jsonObj.getString("message"))
-                        FancyToast.makeText(applicationContext,"Maaf, data sudah ada!",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show()
+                        FancyToast.makeText(applicationContext,jsonObj.getString("message"),
+                            FancyToast.LENGTH_LONG,
+                            FancyToast.ERROR,true).show()
                     }
                 }
                 override fun onFailure(call:

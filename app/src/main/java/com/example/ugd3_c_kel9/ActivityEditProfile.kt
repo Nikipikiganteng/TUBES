@@ -4,24 +4,14 @@ import android.app.DatePickerDialog
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.graphics.Color
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.FrameLayout
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.app.NotificationCompat
-import androidx.core.app.NotificationManagerCompat
 import com.example.ugd3_c_kel9.databinding.ActivityEditProfileBinding
 import com.example.ugd3_c_kel9.room.User
 import com.example.ugd3_c_kel9.room.UserDB
-import com.example.ugd3_c_kel9.room.UserDao
-import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.activity_edit_pembelian.*
-import kotlinx.android.synthetic.main.activity_edit_profile.*
 import java.util.*
 
 

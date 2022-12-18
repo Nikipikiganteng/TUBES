@@ -21,8 +21,7 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        // Proses menghubungkan layout fragment_mahasiswa.xml dengan fragment ini
+
         return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 
@@ -33,8 +32,8 @@ class ProfileFragment : Fragment() {
         val emailTxt :TextView =  view.findViewById(R.id.tvemail)
         val btnEdit : Button = view.findViewById(R.id.btnEdit)
         val id = sharedPreferences?.getString("id", "")
-        nameTxt.setText(db?.UserDao()?.getUser(id!!.toInt())?.Username)
-        emailTxt.setText(db?.UserDao()?.getUser(id!!.toInt())?.Email)
+        nameTxt.setText(id?.toInt()?.let { db?.UserDao()?.getUser(it)!!.Username })
+        emailTxt.setText(id?.toInt()?.let { db?.UserDao()?.getUser(it)!!.Email })
 
         btnEdit.setOnClickListener{
             val intent = Intent(requireActivity(), ActivityEditProfile::class.java)

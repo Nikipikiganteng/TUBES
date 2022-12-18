@@ -10,6 +10,7 @@ import com.example.ugd3_c_kel9.*
 import com.example.ugd3_c_kel9.daftarpaket.DaftarPaket
 import com.example.ugd3_c_kel9.daftarpaket.DaftarPaketActivity
 import com.example.ugd3_c_kel9.databinding.FragmentDaftarPaketBinding
+import com.example.ugd3_c_kel9.reservasiguru.ReservasiGuruActivity
 
 class DaftarPaketFragment : Fragment() {
     private var _binding: FragmentDaftarPaketBinding? = null
@@ -27,6 +28,10 @@ class DaftarPaketFragment : Fragment() {
 
         binding.buttonDaftarPaket.setOnClickListener {
             val intent = Intent(requireActivity(), DaftarPaketActivity::class.java)
+            startActivity(intent)
+        }
+        binding.buttonDiskonPaket.setOnClickListener {
+            val intent = Intent(requireActivity(), DiskonPaket::class.java)
             startActivity(intent)
         }
         binding.buttonPdf.setOnClickListener {

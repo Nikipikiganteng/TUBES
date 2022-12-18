@@ -7,58 +7,58 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.ugd3_c_kel9.*
-import com.example.ugd3_c_kel9.daftarpaket.DaftarPaket
-import com.example.ugd3_c_kel9.daftarpaket.DaftarPaketAdapter
-import com.example.ugd3_c_kel9.daftarpaket.RClient
-import com.example.ugd3_c_kel9.daftarpaket.ResponseDaftarPaket
-import com.example.ugd3_c_kel9.databinding.FragmentDataDaftarPaketBinding
+import com.example.ugd3_c_kel9.R
+import com.example.ugd3_c_kel9.reservasiguru.ReservasiGuru
+import com.example.ugd3_c_kel9.reservasiguru.ReservasiGuruAdapter
+import com.example.ugd3_c_kel9.reservasiguru.RClientReservasiGuru
+import com.example.ugd3_c_kel9.reservasiguru.ResponseReservasiGuru
+import com.example.ugd3_c_kel9.databinding.FragmentDataReservasiGuruBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 @Suppress("UNREACHABLE_CODE")
-class DataDaftarPaketFragment : Fragment() {
-    private var _binding: FragmentDataDaftarPaketBinding? = null
+class DataReservasiGuruFragment : Fragment() {
+    private var _binding: FragmentDataReservasiGuruBinding? = null
     private val binding get() = _binding!!
-    private val listDaftarPaket = ArrayList<DaftarPaket>()
+    private val listReservasiGuru = ArrayList<ReservasiGuru>()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentDataDaftarPaketBinding.inflate(inflater, container, false)
+        _binding = FragmentDataReservasiGuruBinding.inflate(inflater, container, false)
         return binding.root
-        getDataDaftarPaket()
+        getDataReservasiGuru()
     }
     override fun onStart() {
         super.onStart()
-        getDataDaftarPaket()
+        getDataReservasiGuru()
     }
-    private fun getDataDaftarPaket() {
+    private fun getDataReservasiGuru() {
         binding.rvData.setHasFixedSize(true)
         binding.rvData.layoutManager= LinearLayoutManager(context)
         val bundle = arguments
         val cari = bundle?.getString(/* key = */ "cari")
         binding.progressBar.visibility
-        RClient.instances.getData(cari).enqueue(object :
-            Callback<ResponseDaftarPaket> {
+        RClientReservasiGuru.instances.getData(cari).enqueue(object :
+            Callback<ResponseReservasiGuru> {
             override fun onResponse(
-                call: Call<ResponseDaftarPaket>,
-                response: Response<ResponseDaftarPaket>
+                call: Call<ResponseReservasiGuru>,
+                response: Response<ResponseReservasiGuru>
             ){
                 if (response.isSuccessful){
-                    listDaftarPaket.clear()
+                    listReservasiGuru.clear()
                     response.body()?.let {
-                        listDaftarPaket.addAll(it.data) }
+                        listReservasiGuru.addAll(it.data) }
                     val adapter =
-                        DaftarPaketAdapter(listDaftarPaket, requireContext() )
+                        ReservasiGuruAdapter(listReservasiGuru, requireContext() )
                     binding.rvData.adapter = adapter
                     adapter.notifyDataSetChanged()
                     binding.progressBar.isVisible = false
                 }
             }
-            override fun onFailure(call: Call<ResponseDaftarPaket>, t:
+            override fun onFailure(call: Call<ResponseReservasiGuru>, t:
             Throwable) {
             }
         }

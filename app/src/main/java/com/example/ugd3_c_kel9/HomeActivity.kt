@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.example.ugd3_c_kel9.fragment.DaftarPaketFragment
+import com.example.ugd3_c_kel9.fragment.ReservasiGuruFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeActivity : AppCompatActivity() {
@@ -24,6 +25,7 @@ class HomeActivity : AppCompatActivity() {
         val fragmentProfile = ProfileFragment()
         val fragmentPembelian = PembelianFragment()
         val fragmentDaftarPaket = DaftarPaketFragment()
+        val fragmentReservasiGuru = ReservasiGuruFragment()
 
         setCurrentFragment(fragmentHome)
 
@@ -45,6 +47,10 @@ class HomeActivity : AppCompatActivity() {
                 }
                 R.id.itemDaftarPaket -> {
                     setCurrentFragment(fragmentDaftarPaket)
+                    true
+                }
+                R.id.itemReservasiGuru -> {
+                    setCurrentFragment(fragmentReservasiGuru)
                     true
                 }
                 else -> false

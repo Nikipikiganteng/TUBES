@@ -18,4 +18,8 @@
         android:id="@+id/itemDaftarPaket"
         android:icon="@drawable/ic_baseline_list"
         android:title="Daftar Paket" />
+    <item
+        android:id="@+id/itemReservasiGuru"
+        android:icon="@drawable/ic_baseline_book_24"
+        android:title="Reservasi Guru" />
 </menu>
